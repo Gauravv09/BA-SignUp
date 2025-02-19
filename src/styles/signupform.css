@@ -1,0 +1,234 @@
+/* SignupForm.css */
+
+:root {
+    --primary-color: #1a73e8;       /* Modern blue */
+    --secondary-color: #34a853;     /* Green for accents */
+    --error-color: #d93025;         /* Red for errors */
+    --success-color: #0f9d58;       /* Green for success */
+    --bg-color: #f8f9fa;            /* Light background */
+    --text-color: #202124;          /* Dark text */
+    --border-color: #dadce0;        /* Light border */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Container */
+.signup-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+/* Typography */
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+.subsection-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 2rem 0 1.5rem;
+    padding-left: 0.5rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+/* Form Layout */
+.form-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--bg-color);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.form-section:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem; /* Adjusted for uniform spacing */
+    margin-bottom: 1.5rem;
+}
+
+.grid-container-3 {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem; /* Ensuring consistent spacing */
+}
+
+/* Form Elements */
+.form-group {
+    position: relative;
+    margin-bottom: 2rem; /* Uniform gap for all fields */
+}
+
+.form-label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+.form-input,
+.form-select {
+    width: 93.5%;
+    padding: 0.875rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.form-input:focus,
+.form-select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+}
+
+.form-input[readonly] {
+    background-color: #f1f3f4;
+    border-color: #e0e0e0;
+    cursor: not-allowed;
+}
+
+/* Error States */
+.form-input.error,
+.form-select.error {
+    border-color: var(--error-color);
+    animation: shake 0.3s ease;
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.error-message::before {
+    content: '⚠️';
+    font-size: 0.875rem;
+}
+
+/* Success Message */
+.success-message {
+    background: var(--success-color);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    animation: slideIn 0.3s ease;
+}
+
+.success-message::before {
+    content: '✓';
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+/* Button Styles */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary:hover {
+    background: #1557b5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* Emergency Contact Section */
+.emergency-contact {
+    border: 2px dashed rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    background: white;
+    margin-top: 1rem;
+}
+
+.emergency-contact-title {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.emergency-contact-title::before {
+    content: '🆘';
+    font-size: 1.25rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .signup-container {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    .grid-container,
+    .grid-container-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-primary {
+        width: 100%;
+        padding: 1rem;
+    }
+}

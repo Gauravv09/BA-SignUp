@@ -1,0 +1,40 @@
+/* Header.css */
+.header {
+    width: 100vw; /* Full viewport width */
+    background: linear-gradient(135deg, rgb(0, 0, 134), rgb(251, 164, 157));
+    color: white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    /* position: fixed; Keeps the header fixed at the top */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    text-align: center;
+}
+
+.header img {
+    height: 40px;
+    margin-left: 1rem;
+}
+
+.header h1 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-right: 1rem;
+    text-align: center;
+    padding-left: 50px;
+}
+
+/* Ensure content below header is not overlapped */
+.body-content {
+    margin-top: 70px; /* Adjust based on header height */
+}
+
+/* .head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+} */
